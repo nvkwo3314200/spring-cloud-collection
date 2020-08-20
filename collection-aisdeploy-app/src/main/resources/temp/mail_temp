@@ -1,0 +1,12 @@
+<p>Dear All,</p>
+<div>
+    <div style="padding-left:40px">
+        <h3>PROJECT_NAME 部署完成</h3>
+        <p>svn 更新日志如下：</p>
+        SVN_LOG
+    </div>
+</div>
+
+<p>Regards</p>
+
+<p>SZ Ais&nbsp;</p>

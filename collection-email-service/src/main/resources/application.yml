@@ -1,0 +1,33 @@
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://192.168.1.86:8761/eureka/
+server:
+  port: 8765
+spring:
+  application:
+    name: collection-email-service
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    platform: mysql
+    url: jdbc:mysql://192.168.1.203:3306/email?useSSL=true
+    username: root
+    password: root
+  rabbitmq:
+    addresses: 192.168.1.203:5672,192.168.1.207:5672
+    username: rabbitadmin
+    password: 123456
+  cloud:
+    stream:
+      bindings:
+        myInput:
+          #指定输入通道对应的主题名(exchange 名称, 如果不配置group会以多实例的情况下发布订阅的方式工作)
+          destination: minestream
+          #指定该应用实例属于 stream 消费组(queue名称: exchange.group, 多实例共用一个主题)
+          group: email-group
+        myOutput:
+          destination: minestream
+  mail:
+    host:
+logging:
+  file: ./${spring.application.name}.log
