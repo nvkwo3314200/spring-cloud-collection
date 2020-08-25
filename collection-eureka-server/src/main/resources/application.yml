@@ -12,3 +12,5 @@ eureka:
       defaultZone: http://192.168.1.86:${server.port}/eureka/
 logging:
   file: ./${spring.application.name}.log
+
+
